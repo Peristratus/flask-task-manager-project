@@ -19,7 +19,8 @@ nongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_task")
 def get_tasks():
-    return render_template("task.html")
+    tasks = mongo.db.tasks.find()
+    return render_template("task.html", tasks=tasks)
 
 
 if __name__ == "__main__":
