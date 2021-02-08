@@ -10,7 +10,7 @@
 }
 
 :root {
-        --main-color: #4a76a8;
+        --main-color: #12A5DA;
     }
 
     .bg-main-color {
@@ -25,5 +25,6 @@
         border-color: var(--main-color);
     }
     nav{
-        background-color: #4a76a8;
+        background-color: #12A5DA;
     }
+
