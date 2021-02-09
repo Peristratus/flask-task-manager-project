@@ -8,6 +8,18 @@
   line-height: 2;
 
 }
+.btn-small{
+ margin: 5px;
+
+
+}
+
+.collapsible-header .col strong{
+ margin: 5px;
+ line-height: 42px;
+
+
+}
 
 :root {
         --main-color: #12A5DA;
