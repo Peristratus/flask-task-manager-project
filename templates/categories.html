@@ -21,7 +21,7 @@
                         </div>
                         <div class="card-action">
                             <a href="{{url_for('edit_category', category_id=category._id)}}" class="btn green accent-4">Edit</a>
-                             <a href="{{url_for('delete_category', category_id=category._id)}}" class="btn light-blue lighten-1">Confirm</a>
+                             <a href="{{url_for('delete_category', category_id=category._id)}}" class="btn light-blue lighten-1 " id="message">Confirm</a>
                             <a href="#demo-modal-custom" class="btn red lighten-1 modal-trigger">Delete</a>
                         </div>
                     </div>
@@ -52,22 +52,16 @@
 
   </script>
 
-  <script type='text/javascript'>
+  <script>
 
-(function()
-{
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem('firstLoad') )
-    {
-      localStorage['firstLoad'] = true;
-      window.location.reload();
-    }  
-    else
-      localStorage.removeItem('firstLoad');
-  }
-})();
+          let textbox = document.getElementById("message")
 
-</script>
+	        let timer=setTimeout(function() {
+	           if(window.location.hash != '#r') {
+            window.location.hash = 'r';
+            window.location.reload(1);
+        }
+    }, 5000);
+  </script>
 
 {% endblock %}
