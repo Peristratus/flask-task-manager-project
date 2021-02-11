@@ -21,21 +21,22 @@
                         </div>
                         <div class="card-action">
                             <a href="{{url_for('edit_category', category_id=category._id)}}" class="btn green accent-4">Edit</a>
-                             <a href="{{url_for('delete_category', category_id=category._id)}}" class="btn light-blue lighten-1 " id="message">Confirm</a>
-                            <a href="#demo-modal-custom" class="btn red lighten-1 modal-trigger">Delete</a>
+                            <a href="#{{category.item_name}}" class="btn red lighten-1 modal-trigger">Delete</a>
                         </div>
                     </div>
                 </div>
 
                  <!-- Modal Structure -->
-                <div id="demo-modal-custom" class="modal">
+                <div id="{{category.item_name}}" class="modal">
                         <div class="modal-content">
                             <h4></h4>
                             <p>Are you sure you want to permenantly delete the selected category ? Press confirm to complete this action. </p>
+                    
                         </div>
                        <div class="modal-footer">
                              
                               <a href="{{url_for('get_categories')}}" class="btn green accent-4">Cancel</a>
+                               <a href="{{url_for('delete_category', category_id=category._id)}}" class="btn light-blue lighten-1 " id="message">Confirm</a>
                        </div>
                 </div>
 
@@ -52,16 +53,5 @@
 
   </script>
 
-  <script>
-
-          let textbox = document.getElementById("message")
-
-	        let timer=setTimeout(function() {
-	           if(window.location.hash != '#r') {
-            window.location.hash = 'r';
-            window.location.reload(1);
-        }
-    }, 5000);
-  </script>
 
 {% endblock %}
