@@ -22,6 +22,7 @@
     </form>
   </div>
 
+   {% if tasks|length > 0 %}
    <ul class="collapsible popout">
        {% for task in tasks %}
         <li>
@@ -49,7 +50,9 @@
         </li>
         {%  endfor %}
   </ul>
-
+  {% else %}
+      <h4 class="red-text text-darken-4 center-align">No Result Found</h4>
+  {% endif %}
 
 
 {% endblock %}
